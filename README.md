@@ -30,6 +30,6 @@ https://medium.com/@bradanderson.contacts/spark-vs-hadoop-mapreduce-c3b998285578
 http://developers.socialminer.com/2018/12/07/otimizando-apache-spark-com-s3/
 https://data-flair.training/blogs/apache-spark-rdd-persistence-caching/
 https://www.infoq.com/br/articles/mapreduce-vs-spark/
-
+http://www.inf.ufpr.br/erlfilho/tutorials/spark/
 
 
