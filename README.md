@@ -1,7 +1,7 @@
 # teste_semantix
 
 ## Qual o objetivo do comando cache em Spark?
-O comando cache é uma técnica de otimização de processos. Retém processos que podem ser utilziados posteriormente de forma intermediária, fazendo com haja rapidez na execução.
+O comando cache é uma técnica de otimização de processos. Retém processos que podem ser utilziados posteriormente de forma intermediária, fazendo com que haja rapidez na execução.
 
 
 ## O mesmo código implementado em Spark é normalmente mais rápido que a implementação equivalente em MapReduce. Por quê?
@@ -14,12 +14,6 @@ A função SparkContext é um objeto de configuração do Spark para as aplicaç
 Os RDDs, de forma macro, é uma forma de armazenamento de dados que são distribuídos em várias máquinas (como se fossem tabelas), possibilitando a leitura de forma mais veloz. Os RDDs são imutáveis. Há possibilidade de, basicamente, somente duas operações: Transformations (map, filter, join, union, etc) e Actions (reduce, count, first, etc) e cada vez que os RDDs sofrem estas operações, o RDD original não é modificado, é gerado um novo.
 
 ## Explique o que o código Scala abaixo faz.
-val textFile = sc.textFile("hdfs://...")
-val counts = textFile.flatMap(line => line.split(" "))
-  .map(word => (word, 1))
-  .reduceByKey(_ + _)
-counts.saveAsTextFile("hdfs://...")
-
 - Carrega o arquivo em uma variável com o nome *textFile*
 - Introduz cada palavra separada por " " dentro da variável *counts*
 - Contabiliza a quantidade de vezes que cada palavra apareceu no arquivo
