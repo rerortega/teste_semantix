@@ -14,8 +14,8 @@ A função SparkContext é um objeto de configuração do Spark para as aplicaç
 Os RDDs, de forma macro, é uma forma de armazenamento de dados que são distribuídos em várias máquinas (como se fossem tabelas), possibilitando a leitura de forma mais veloz. Os RDDs são imutáveis. Há possibilidade de, basicamente, somente duas operações: Transformations (map, filter, join, union, etc) e Actions (reduce, count, first, etc) e cada vez que os RDDs sofrem estas operações, o RDD original não é modificado, é gerado um novo.
 
 ## Explique o que o código Scala abaixo faz.
-- Carrega o arquivo em uma variável com o nome *textFile*
-- Introduz cada palavra separada por " " dentro da variável *counts*
+- Carrega o arquivo em uma constante com o nome *textFile*
+- Introduz cada palavra separada por " " dentro da constante *counts*
 - Contabiliza a quantidade de vezes que cada palavra apareceu no arquivo
 - Salva o resultado num arquivo texto. 
  
