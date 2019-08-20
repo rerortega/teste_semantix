@@ -24,7 +24,7 @@ counts.saveAsTextFile("hdfs://...")
 - Introduz cada palavra separada por " " dentro da variável *counts*
 - Contabiliza a quantidade de vezes que cada palavra apareceu no arquivo
 - Salva o resultado num arquivo texto. 
-
+ 
 
 # Referências:
 https://docs.databricks.com/delta/delta-cache.html
