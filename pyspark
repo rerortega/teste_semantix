@@ -1,10 +1,12 @@
 # importando bibliotecas necessárias
+
 from pyspark import SparkContext
 from pyspark.sql import SQLContext
 from pyspark.sql.functions import split, regexp_extract
 from pyspark.sql.functions import col
 
-#Criando SparkContext e carregando os arquivos
+# Criando SparkContext e carregando os arquivos
+
 sc = SparkContext()
 sqlContext= SQLContext(sc)
 
@@ -25,15 +27,18 @@ regexp_extract('value', r'^.*"\w+\s+([^\s]+)\s+HTTP.*"', 1).alias('request'),
 regexp_extract('value', r'^.*"\s+([^\s]+)', 1).cast('integer').alias('cod_http'),
 regexp_extract('value', r'^.*\s+(\d+)$', 1).cast('integer').alias('tot_byte'))
 
-#Contabilizando por host
+# Contabilizando por host
+
 df_jul_format.groupBy('host').count().filter('count = 1').select('host').show()
 df_aug_format.groupBy('host').count().filter('count = 1').select('host').show()
 
-#Quantidade de erros 404
+# Quantidade de erros 404
+
 df_jul_format.groupBy('cod_http').count().filter('cod_http = "404"').show()
 df_aug_format.groupBy('cod_http').count().filter('cod_http = "404"').show()
 
-#Os 5 maiores Request de error 404
+# Os 5 maiores Request de error 404
+
 df_jul_format.filter('cod_http = "404"').groupBy('request').count().sort(col("count").desc()).show(5, truncate=False)
 df_aug_format.filter('cod_http = "404"').groupBy('request').count().sort(col("count").desc()).show(5, truncate=False)
 
